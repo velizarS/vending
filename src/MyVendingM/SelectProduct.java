@@ -23,7 +23,15 @@ public class SelectProduct implements lookmenu{
     }
    
   
-  public static double sum ;
+  public  double sum ;
+
+    public double getSum() {
+        return sum;
+    }
+
+    public void setSum(double sum) {
+        this.sum = sum;
+    }
 
 
   
@@ -198,7 +206,5 @@ public class SelectProduct implements lookmenu{
     public void lookmenu() {
         //To change body of generated methods, choose Tools | Templates.
     }
-    public double totalSum(){
-        return sum;
-    }
+   
 }

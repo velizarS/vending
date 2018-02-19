@@ -11,10 +11,10 @@ import java.util.Scanner;
  *
  * @author Velizar
  */
-public class Pay extends PenetrateMoney {
-    SelectProduct pr = new SelectProduct();
+public class Pay extends PenetrateMoney{
+   
     Basket basket;
-    
+   double coins = penetratedMoney();
     
     public Pay(Basket basket) {
         this.basket = basket;
@@ -22,11 +22,12 @@ public class Pay extends PenetrateMoney {
     
     public void pay(){
         Scanner scan = new Scanner(System.in);
-        System.out.println("money : ");
+        System.out.println("money : " + coins);
         System.out.println("Do you wont to penetrate money?");
         System.out.println("[1] Yes  [2] No");
         
-        double basketTotal = basket.total();
+        double basketTotal = basket.getPrices();
+     System.out.println("sum  :"+ basketTotal);
         
         int a = scan.nextInt();
         if (a==1){
@@ -34,15 +35,15 @@ public class Pay extends PenetrateMoney {
             
         }
         else {
-            if(true){
+            if(basketTotal <= coins ){
                 System.out.println("Successful");
-                System.out.println("reset: "+ true);
+                System.out.println("reset: "+ (coins - basketTotal));
                 basket.clear();
                 
                 
             }
             else{
-                System.out.println("your money not' enough"+ "\n Need: "+(true)+"\n Do you wont to penetrate money? ");
+                System.out.println("your money not' enough"+ "\n Need: "+(basketTotal - coins)+"\n Do you wont to penetrate money? ");
                   System.out.println("[1] Yes  [2] No");
                 int b = scan.nextInt();
                  if (b==1){

@@ -11,9 +11,10 @@ import java.util.Scanner;
  *
  * @author Velizar
  */
-public class PenetrateMoney implements lookmenu{
-   protected  double money;
-
+public class PenetrateMoney  implements lookmenu{
+   double money;
+    MyVending vend = new MyVending();
+    
     public double getMoney() {
         return money;
     }
@@ -21,7 +22,8 @@ public class PenetrateMoney implements lookmenu{
     public void setMoney(double money) {
         this.money = money;
     }
-   
+
+    
     
     Scanner scan = new Scanner(System.in);
     public void penetrateMoney(){
@@ -31,7 +33,7 @@ public class PenetrateMoney implements lookmenu{
         String enter = scan.nextLine();
         String[] arr = enter.split(",");
         convert(arr);
-        System.out.println(money+" лв");
+        System.out.println(penetratedMoney()+" лв");
         System.out.println("Желаете ли да вкарате още пари? "+ "\n[1] да [2] не");
         int a= scan.nextInt();
     if(a==1){
@@ -41,10 +43,10 @@ public class PenetrateMoney implements lookmenu{
         lookmenu();
     }
        
-        
       
        
     }
+    
    
      public  void convert(String [] arr){
        double [] convert = new double [arr.length];
@@ -54,11 +56,17 @@ public class PenetrateMoney implements lookmenu{
          money = convert[0]*convert[1];
        
 }
+    public double penetratedMoney( ){
+        
+        vend.penetratedMoney =  money;
+        return vend.penetratedMoney;
+    }
+   
 
     @Override
     public void lookmenu() {
         
     }
-   
+    
    
 }

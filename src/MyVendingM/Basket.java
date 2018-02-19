@@ -14,18 +14,18 @@ import java.util.Map;
  */
 public class Basket {
     
-    Map<Product, Integer> currentBasket = new HashMap<>();
+    Map<Integer, Product> currentBasket = new HashMap<>();
     
     public void addProduct(Product newProduct, int id) {
         
-        if(currentBasket.containsKey(newProduct)) {
-            currentBasket.put(newProduct, currentBasket.get(newProduct) + id);
+        if(currentBasket.containsKey(id)) {
+            currentBasket.put(id, newProduct);
         } else {
-            currentBasket.put(newProduct, id);
+            currentBasket.put(id, newProduct);
         }
     }
     
-    public Map<Product, Integer> get() {
+    public Map<Integer, Product> get() {
         return currentBasket;
     }
 
@@ -34,10 +34,18 @@ public class Basket {
         currentBasket.clear();
     }
     
-    public double total() {
-        // TODO
-        
-        return 0d;
+   
+
+    public double getPrices(){
+        double sum=0;
+        for (Integer key:currentBasket.keySet()) {
+           sum=sum+currentBasket.get(key).getPrice();
+        }
+        return sum;
     }
+
+
+
+
 
 }
