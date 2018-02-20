@@ -17,9 +17,10 @@ public class Menu implements lookmenu , ProductMenu, PenetrateMoney$ {
         
         Basket basket = new Basket();
         Scanner scan = new Scanner(System.in);
-        int select;
+        
          for(;;){
-           
+             int select;
+             System.out.println("money : " + penetrateMoney());
         System.out.printf("[1] select product"+ "       [2] penetrate money\n");
         System.out.printf("[3] Pay"+ "                  [4] exit");
             System.out.print("\nSelect : ");

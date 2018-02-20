@@ -11,10 +11,11 @@ import java.util.Scanner;
  *
  * @author Velizar
  */
-public class Pay extends PenetrateMoney{
+public class Pay extends PenetrateMoney {
+    Money coins = new Money();
    
     Basket basket;
-   double coins = penetratedMoney();
+   double penetrateCoins = coins.enterCoins();
     
     public Pay(Basket basket) {
         this.basket = basket;
@@ -22,7 +23,7 @@ public class Pay extends PenetrateMoney{
     
     public void pay(){
         Scanner scan = new Scanner(System.in);
-        System.out.println("money : " + coins);
+        System.out.println("money : " + penetrateCoins);
         System.out.println("Do you wont to penetrate money?");
         System.out.println("[1] Yes  [2] No");
         
@@ -56,5 +57,10 @@ public class Pay extends PenetrateMoney{
                     
                  }
         }
+    }
+
+    @Override
+    public void lookmenu() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

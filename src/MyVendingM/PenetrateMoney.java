@@ -11,10 +11,11 @@ import java.util.Scanner;
  *
  * @author Velizar
  */
-public class PenetrateMoney  implements lookmenu{
+public class PenetrateMoney {
    double money;
     MyVending vend = new MyVending();
-    
+
+   
     public double getMoney() {
         return money;
     }
@@ -40,7 +41,7 @@ public class PenetrateMoney  implements lookmenu{
       penetrateMoney();
     }
     else {
-        lookmenu();
+       
     }
        
       
@@ -58,15 +59,12 @@ public class PenetrateMoney  implements lookmenu{
 }
     public double penetratedMoney( ){
         
-        vend.penetratedMoney =  money;
-        return vend.penetratedMoney;
+       
+        return money;
     }
    
 
-    @Override
-    public void lookmenu() {
-        
-    }
+   
     
    
 }
