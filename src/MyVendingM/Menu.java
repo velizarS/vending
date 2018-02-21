@@ -11,16 +11,17 @@ import java.util.Scanner;
  *
  * @author Velizar
  */
-public class Menu implements lookmenu , ProductMenu, PenetrateMoney$ {
+public class Menu implements lookmenu , ProductMenu {
     
     public void lookmenu(){
-        
+        Money money = new Money();
         Basket basket = new Basket();
         Scanner scan = new Scanner(System.in);
+        Pay pay = new Pay(basket);
         
          for(;;){
              int select;
-             System.out.println("money : " + penetrateMoney());
+            
         System.out.printf("[1] select product"+ "       [2] penetrate money\n");
         System.out.printf("[3] Pay"+ "                  [4] exit");
             System.out.print("\nSelect : ");
@@ -30,12 +31,10 @@ public class Menu implements lookmenu , ProductMenu, PenetrateMoney$ {
             product.ProductMenu();
         }
         else if (select == 2){
-            PenetrateMoney penetrate = new PenetrateMoney();
-            penetrate.penetrateMoney();
+            pay.penetrateMoney();
         }
          else if (select == 3){
-           Pay Pay = new Pay(basket);
-           Pay.pay();
+           pay.pay();
         }
          else if (select == 4){
             
@@ -50,10 +49,7 @@ public class Menu implements lookmenu , ProductMenu, PenetrateMoney$ {
        
     }
 
-    @Override
-    public double penetrateMoney() {
-        return 0;
-    }
+   
     }
 
   

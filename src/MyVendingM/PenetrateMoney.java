@@ -12,19 +12,11 @@ import java.util.Scanner;
  * @author Velizar
  */
 public class PenetrateMoney {
-   double money;
-    MyVending vend = new MyVending();
-
-   
-    public double getMoney() {
-        return money;
-    }
-
-    public void setMoney(double money) {
-        this.money = money;
-    }
-
     
+   
+  
+        double  coins = 0.0;
+   
     
     Scanner scan = new Scanner(System.in);
     public void penetrateMoney(){
@@ -54,13 +46,13 @@ public class PenetrateMoney {
         for (int i = 0; i < arr.length; i++) {
          
             convert[i]  =  Double.parseDouble(arr[i]); }
-         money = convert[0]*convert[1];
+           coins = convert[0]*convert[1];
        
 }
     public double penetratedMoney( ){
         
        
-        return money;
+        return coins;
     }
    
 
